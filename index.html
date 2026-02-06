@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construcciones y Transportes JMC S.A.S — Portafolio</title>
+  <meta name="description" content="Portafolio de servicios: obras civiles y arquitectónicas. Proyectos, servicios, galería, récord de obras y contacto." />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
+    </div>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand" aria-label="Construcciones y Transportes JMC S.A.S">
+        <div class="brand__mark" aria-label="Logo de Construcciones y Transportes JMC S.A.S">
+            <img src="assets/logo-jmc.png" alt="Logo JMC" />
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">Construcciones y Transportes JMC S.A.S</div>
+          <div class="brand__tag">Portafolio de servicios</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="menuBtn" aria-expanded="false" aria-controls="menu">
+          Menú
+        </button>
+        <div class="nav__links" id="menu">
+          <a href="#sobre">Sobre</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#galeria">Galería</a>
+          <a href="#record">Récord</a>
+          <a class="btn btn--primary" href="#contacto">Contacto</a>
+          <button class="btn btn--ghost" id="themeBtn" type="button" aria-label="Cambiar tema">Tema</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="pill">Año 2026 · Obras civiles y arquitectónicas</p>
+          <h1>Construimos soluciones con calidad, seguridad y cumplimiento.</h1>
+          <p class="muted">
+            Proyectos de pequeña, mediana y gran escala. Ingeniería civil desde nivel básico hasta detalle.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#record">Ver récord de obras</a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="metaCard">
+              <div class="metaCard__k">Servicios</div>
+              <div class="metaCard__v">Obra civil · Estructura · Espacio público</div>
+            </div>
+            <div class="metaCard">
+              <div class="metaCard__k">Enfoque</div>
+              <div class="metaCard__v">Calidad · Normativas · Seriedad</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="visualCard">
+            <div class="visualCard__top"></div>
+            <div class="visualCard__lines">
+              <div></div><div></div><div></div>
+            </div>
+            <div class="visualCard__badge">JMC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Sobre nosotros</h2>
+          <p class="muted">
+            Empresa creada con el objetivo de realizar proyectos de obras civiles y arquitectónicas de pequeña, mediana y gran escala,
+            cumpliendo estándares de calidad y seriedad.
+          </p>
+        </div>
+
+        <div class="grid2">
+          <article class="card">
+            <h3>Nuestra experiencia</h3>
+            <p class="muted">
+              A lo largo de la trayectoria se han ejecutado obras civiles, industriales, comerciales y de vivienda,
+              adaptándonos a necesidades específicas y garantizando cumplimiento de normativas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Cómo trabajamos</h3>
+            <ul class="list">
+              <li>Planeación y control de obra</li>
+              <li>Enfoque en seguridad y calidad</li>
+              <li>Entrega con estándares y soporte</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Nuestros proyectos</h2>
+          <p class="muted">Tarjetas con detalle. Puedes reemplazar/añadir fotos en <code>assets/proyectos/</code>.</p>
+        </div>
+
+        <div class="toolbar">
+          <input id="projectSearch" class="input" type="search" placeholder="Buscar proyecto..." />
+          <div class="chips" role="tablist" aria-label="Filtrar proyectos">
+            <button class="chip is-active" data-filter="todos" type="button">Todos</button>
+            <button class="chip" data-filter="en-curso" type="button">En curso</button>
+            <button class="chip" data-filter="finalizado" type="button">Finalizados</button>
+          </div>
+        </div>
+
+        <div id="projectsGrid" class="cards"></div>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Servicios</h2>
+          <p class="muted">Listado interactivo en acordeón.</p>
+        </div>
+
+        <div id="servicesAccordion" class="accordion"></div>
+      </div>
+    </section>
+
+    <section id="galeria" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Galería</h2>
+          <p class="muted">Haz clic para ampliar. Reemplaza imágenes en <code>assets/galeria/</code>.</p>
+        </div>
+
+        <div id="galleryGrid" class="gallery"></div>
+      </div>
+    </section>
+
+    <section id="record" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Récord de obras</h2>
+          <p class="muted">Buscador rápido por empresa/proyecto (según el portafolio).</p>
+        </div>
+
+        <div class="toolbar">
+          <input id="recordSearch" class="input" type="search" placeholder="Buscar en récord de obras..." />
+          <span class="muted small" id="recordCount"></span>
+        </div>
+
+        <div class="tableWrap">
+          <table class="table" aria-label="Récord de obras">
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Proyecto</th>
+                <th>Inicio</th>
+                <th>Terminación</th>
+              </tr>
+            </thead>
+            <tbody id="recordBody"></tbody>
+          </table>
+        </div>
+
+        <p class="muted small">
+          Nota: En el portafolio se indica que estas obras fueron ejecutadas por quien hoy es el representante legal.
+        </p>
+      </div>
+    </section>
+
+    <section id="contacto" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contacto</h2>
+          <p class="muted">Formulario listo para Netlify + datos de contacto.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="card">
+            <h3>Datos</h3>
+            <div class="kv">
+              <div class="kv__k">Teléfono</div>
+              <div class="kv__v"><a href="tel:+573144934264">314 493 4264</a></div>
+
+              <div class="kv__k">Correo</div>
+              <div class="kv__v"><a href="mailto:c.jmcsas@hotmail.com">c.jmcsas@hotmail.com</a></div>
+
+              <div class="kv__k">Dirección</div>
+              <div class="kv__v">Diagonal 27 sur # 34 - 56</div>
+
+              <div class="kv__k">WhatsApp</div>
+              <div class="kv__v"><a href="https://wa.me/573144934264" target="_blank" rel="noreferrer">Abrir chat</a></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Escríbenos</h3>
+
+            <!-- Netlify Forms -->
+            <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contacto" />
+              <p class="hidden">
+                <label>Si eres bot, no llenes esto: <input name="bot-field" /></label>
+              </p>
+
+              <label class="label">Nombre
+                <input class="input" name="nombre" required />
+              </label>
+
+              <label class="label">Correo
+                <input class="input" name="email" type="email" required />
+              </label>
+
+              <label class="label">Mensaje
+                <textarea class="input" name="mensaje" rows="5" required></textarea>
+              </label>
+
+              <button class="btn btn--primary" type="submit">Enviar</button>
+              <p class="muted small">Al publicar en Netlify, el formulario quedará activo automáticamente.</p>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="muted small">© <span id="year"></span> Construcciones y Transportes JMC S.A.S</span>
+      <a class="muted small" href="#contenido">Volver arriba</a>
+    </div>
+  </footer>
+
+  <!-- Modal reutilizable -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" data-close aria-label="Cerrar">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

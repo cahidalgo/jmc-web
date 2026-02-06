@@ -7,23 +7,25 @@
   <meta name="description" content="Portafolio de servicios: obras civiles y arquitectónicas. Proyectos, servicios, galería, récord de obras y contacto." />
   <meta name="theme-color" content="#0ea5e9" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <div class="progress" aria-hidden="true">
+  <div class="progress" aria-hidden="true">
     <div class="progress__bar" id="progressBar"></div>
-    </div>
+  </div>
+
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
   <header class="header">
     <div class="container header__inner">
       <div class="brand" aria-label="Construcciones y Transportes JMC S.A.S">
         <div class="brand__mark" aria-label="Logo de Construcciones y Transportes JMC S.A.S">
-            <img src="assets/logo-jmc.png" alt="Logo JMC" />
+          <img src="assets/logo-jmc.png" alt="Logo JMC" />
         </div>
         <div class="brand__text">
           <div class="brand__name">Construcciones y Transportes JMC S.A.S</div>
@@ -32,9 +34,10 @@
       </div>
 
       <nav class="nav" aria-label="Navegación principal">
-        <button class="nav__toggle" id="menuBtn" aria-expanded="false" aria-controls="menu">
+        <button class="nav__toggle" id="menuBtn" aria-expanded="false" aria-controls="menu" type="button">
           Menú
         </button>
+
         <div class="nav__links" id="menu">
           <a href="#sobre">Sobre</a>
           <a href="#proyectos">Proyectos</a>
@@ -42,19 +45,28 @@
           <a href="#galeria">Galería</a>
           <a href="#record">Récord</a>
           <a href="#contacto">Contacto</a>
-          <button class="btn btn--ghost" id="themeBtn" type="button" aria-label="Cambiar tema">Tema</button>
+
+          <button class="btn btn--ghost" id="themeBtn" type="button" aria-label="Cambiar tema">
+            Tema
+          </button>
         </div>
       </nav>
-    </div> 
+    </div>
   </header>
 
   <main id="contenido">
+    <!-- HERO -->
     <section class="hero hero--photo">
-    <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__bg" aria-hidden="true"></div>
+
       <div class="container hero__inner">
         <div class="hero__copy">
           <p class="pill">Año 2026 · Obras civiles y arquitectónicas</p>
-          <h1>Construimos soluciones con calidad, seguridad y cumplimiento.</h1>
+
+          <h1>
+            Construimos <span class="grad">soluciones</span> con calidad, seguridad y cumplimiento.
+          </h1>
+
           <p class="muted">
             Proyectos de pequeña, mediana y gran escala. Ingeniería civil desde nivel básico hasta detalle.
           </p>
@@ -63,96 +75,88 @@
             <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
             <a class="btn btn--ghost" href="#record">Ver récord de obras</a>
           </div>
+        </div>
 
         
+      </div>
     </section>
 
-    <section id="sobre" class="section">
-      
-        <section id="sobre" class="section reveal">
-            <div class="container">
-                <div class="aboutLayout">
-                <!-- COLUMNA: TEXTO -->
-                <div class="aboutMain">
-                    <div class="section__head">
-                    <h2>Sobre nosotros</h2>
-                    <p class="muted">
-                        En <strong>Construcciones y Transportes JMC S.A.S</strong> desarrollamos proyectos de
-                        obras civiles y arquitectónicas de pequeña, mediana y gran escala, con un enfoque claro:
-                        <strong>planear bien, ejecutar con calidad y entregar con cumplimiento</strong>.
-                        Nos adaptamos a los requerimientos técnicos de cada obra, manteniendo control, seguridad y trazabilidad
-                        durante todo el proceso.
-                    </p>
-                    </div>
-
-                    <div class="aboutChips" aria-label="Enfoque y capacidades">
-                    <span class="aboutChip">Calidad</span>
-                    <span class="aboutChip">Seguridad</span>
-                    <span class="aboutChip">Cumplimiento</span>
-                    <span class="aboutChip">Planeación y control</span>
-                    <span class="aboutChip">Soporte post-entrega</span>
-                    </div>
-
-                    <div class="aboutCards">
-
-                    <article class="card">
-                        <h3>Cómo trabajamos</h3>
-                        <p class="muted">
-                        Nuestra forma de trabajo prioriza el detalle: definimos alcance, cronograma y controles desde el inicio,
-                        y mantenemos comunicación constante para que cada decisión tenga respaldo técnico.
-                        </p>
-                        <ul class="aboutSteps">
-                        <li>
-                            <strong>Diagnóstico y alcance:</strong> revisamos condiciones del sitio, requerimientos y entregables.
-                        </li>
-                        <li>
-                            <strong>Planeación y control:</strong> programación, recursos, seguimiento de avances y calidad.
-                        </li>
-                        <li>
-                            <strong>Ejecución segura:</strong> procedimientos en obra y cumplimiento de buenas prácticas.
-                        </li>
-                        <li>
-                            <strong>Entrega y soporte:</strong> cierre ordenado y acompañamiento cuando se requiera.
-                        </li>
-                        </ul>
-
-                    </article>
-                    </div>
-                </div>
-
-                <!-- COLUMNA: LOGO / MARCA -->
-                <aside class="aboutBrand" aria-label="Marca JMC">
-                    <div class="aboutBrandInner">
-                    <div class="aboutBrandGlow" aria-hidden="true"></div>
-
-                    <img class="aboutLogo"
-                        src="assets/logo-jmc.png"
-                        alt="Logo Construcciones y Transportes JMC S.A.S"
-                        loading="lazy" />
-
-                    <p class="aboutBrandText">
-                        Comprometidos con la ejecución responsable, la calidad y el cumplimiento en cada proyecto.
-                    </p>
-
-                    <div class="aboutBrandBadges">
-                        <span class="badge">Obras civiles</span>
-                        <span class="badge">Estructura</span>
-                        <span class="badge">Espacio público</span>
-                    </div>
-                    </div>
-                </aside>
-                </div>
+    <!-- SOBRE -->
+    <section id="sobre" class="section reveal">
+      <div class="container">
+        <div class="aboutLayout">
+          <!-- COLUMNA: TEXTO -->
+          <div class="aboutMain">
+            <div class="section__head">
+              <h2>Sobre nosotros</h2>
+              <p class="muted">
+                En <strong>Construcciones y Transportes JMC S.A.S</strong> desarrollamos proyectos de
+                obras civiles y arquitectónicas de pequeña, mediana y gran escala, con un enfoque claro:
+                <strong>planear bien, ejecutar con calidad y entregar con cumplimiento</strong>.
+                Nos adaptamos a los requerimientos técnicos de cada obra, manteniendo control, seguridad y trazabilidad
+                durante todo el proceso.
+              </p>
             </div>
-            </section>
 
+            <div class="aboutChips" aria-label="Enfoque y capacidades">
+              <span class="aboutChip">Calidad</span>
+              <span class="aboutChip">Seguridad</span>
+              <span class="aboutChip">Cumplimiento</span>
+              <span class="aboutChip">Planeación y control</span>
+              <span class="aboutChip">Soporte post-entrega</span>
+            </div>
 
+            <div class="aboutCards">
+              <article class="card">
+                <h3>Cómo trabajamos</h3>
+                <p class="muted">
+                  Nuestra forma de trabajo prioriza el detalle: definimos alcance, cronograma y controles desde el inicio,
+                  y mantenemos comunicación constante para que cada decisión tenga respaldo técnico.
+                </p>
+                <ul class="aboutSteps">
+                  <li><strong>Diagnóstico y alcance:</strong> revisamos condiciones del sitio, requerimientos y entregables.</li>
+                  <li><strong>Planeación y control:</strong> programación, recursos, seguimiento de avances y calidad.</li>
+                  <li><strong>Ejecución segura:</strong> procedimientos en obra y cumplimiento de buenas prácticas.</li>
+                  <li><strong>Entrega y soporte:</strong> cierre ordenado y acompañamiento cuando se requiera.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <!-- COLUMNA: LOGO / MARCA -->
+          <aside class="aboutBrand" aria-label="Marca JMC">
+            <div class="aboutBrandInner">
+              <div class="aboutBrandGlow" aria-hidden="true"></div>
+
+              <img class="aboutLogo"
+                   src="assets/logo-jmc.png"
+                   alt="Logo Construcciones y Transportes JMC S.A.S"
+                   loading="lazy" />
+
+              <p class="aboutBrandText">
+                Comprometidos con la ejecución responsable, la calidad y el cumplimiento en cada proyecto.
+              </p>
+
+              <div class="aboutBrandBadges">
+                <span class="badge">Obras civiles</span>
+                <span class="badge">Estructura</span>
+                <span class="badge">Espacio público</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
     </section>
 
-    <section id="proyectos" class="section section--alt">
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section section--alt reveal">
       <div class="container">
         <div class="section__head">
           <h2>Nuestros proyectos</h2>
-          <p class="muted">Conoce algunos de nuestros trabajos y el tipo de soluciones que implementamos en cada obra. Nuestro enfoque se centra en la correcta ejecución, el cumplimiento de especificaciones técnicas y la entrega con estándares de calidad.</p>
+          <p class="muted">
+            Conoce algunos de nuestros trabajos y el tipo de soluciones que implementamos en cada obra. Nuestro enfoque se centra
+            en la correcta ejecución, el cumplimiento de especificaciones técnicas y la entrega con estándares de calidad.
+          </p>
         </div>
 
         <div class="toolbar">
@@ -168,53 +172,67 @@
       </div>
     </section>
 
-    <section id="servicios" class="section">
-        
-    
-      <div class="servicesShell">
-        <h2>Servicios</h2>
-        <p class="muted">Ofrecemos un portafolio completo para proyectos de pequeña, mediana y gran escala. Desde movimiento de tierras y cimentaciones hasta acabados y trabajos especializados, ejecutamos con planeación, control y trazabilidad para asegurar resultados confiables.</p>
-        <div class="servicesControls">
-            
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2>Servicios</h2>
+          <p class="muted">
+            Ofrecemos un portafolio completo para proyectos de pequeña, mediana y gran escala. Desde movimiento de tierras y
+            cimentaciones hasta acabados y trabajos especializados, ejecutamos con planeación, control y trazabilidad
+            para asegurar resultados confiables.
+          </p>
+        </div>
+
+        <div class="servicesShell">
+          <div class="servicesControls">
             <input id="serviceSearch" class="input" type="search" placeholder="Buscar servicio..." />
 
             <div class="chips" role="tablist" aria-label="Filtrar servicios">
-            <button class="chip is-active" type="button" data-scat="todos">Todos</button>
-            <button class="chip" type="button" data-scat="tierra">Movimiento de tierras</button>
-            <button class="chip" type="button" data-scat="estructura">Estructura</button>
-            <button class="chip" type="button" data-scat="acabados">Acabados</button>
-            <button class="chip" type="button" data-scat="urbano">Urbano</button>
-            <button class="chip" type="button" data-scat="especializado">Especializado</button>
+              <button class="chip is-active" type="button" data-scat="todos">Todos</button>
+              <button class="chip" type="button" data-scat="tierra">Movimiento de tierras</button>
+              <button class="chip" type="button" data-scat="estructura">Estructura</button>
+              <button class="chip" type="button" data-scat="acabados">Acabados</button>
+              <button class="chip" type="button" data-scat="urbano">Urbano</button>
+              <button class="chip" type="button" data-scat="especializado">Especializado</button>
             </div>
-        </div>
+          </div>
 
-        <div class="servicesLayout">
+          <div class="servicesLayout">
             <div id="servicesCards" class="servicesCards"></div>
 
             <aside id="servicePanel" class="card servicePanel" aria-live="polite">
-            <!-- Render JS -->
+              <!-- Render JS -->
             </aside>
+          </div>
         </div>
-       </div>
-
+      </div>
     </section>
 
-    <section id="galeria" class="section section--alt">
+    <!-- GALERÍA -->
+    <section id="galeria" class="section section--alt reveal">
       <div class="container">
         <div class="section__head">
           <h2>Galería</h2>
-          <p class="muted">Explora imágenes de proyectos y actividades realizadas. La galería muestra parte de nuestro día a día en obra, el detalle de ejecución y el compromiso por entregar trabajos bien terminados y alineados a cada necesidad.</p>
+          <p class="muted">
+            Explora imágenes de proyectos y actividades realizadas. La galería muestra parte de nuestro día a día en obra, el detalle
+            de ejecución y el compromiso por entregar trabajos bien terminados y alineados a cada necesidad.
+          </p>
         </div>
 
         <div id="galleryGrid" class="gallery"></div>
       </div>
     </section>
 
-    <section id="record" class="section">
+    <!-- RÉCORD -->
+    <section id="record" class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2>Récord de obras</h2>
-          <p class="muted">Aquí encontrarás un resumen de obras y actividades desarrolladas por JMC S.A.S. Este apartado refleja nuestra trayectoria y la capacidad para asumir proyectos con planeación, seriedad y seguimiento técnico durante todo el proceso.</p>
+          <p class="muted">
+            Aquí encontrarás un resumen de obras y actividades desarrolladas por JMC S.A.S. Este apartado refleja nuestra trayectoria y
+            la capacidad para asumir proyectos con planeación, seriedad y seguimiento técnico durante todo el proceso.
+          </p>
         </div>
 
         <div class="toolbar">
@@ -242,106 +260,129 @@
       </div>
     </section>
 
-    <section id="contacto" class="section section--alt">
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--alt reveal">
       <div class="container">
         <div class="section__head">
           <h2>Contacto</h2>
-          <p class="muted">Estamos listos para asesorarte. Escríbenos por WhatsApp, llámanos o envíanos un correo con tu solicitud. Te orientamos en el alcance, tiempos y necesidades para cotizar de forma clara y eficiente.</p>
+          <p class="muted">
+            Estamos listos para asesorarte. Escríbenos por WhatsApp, llámanos o envíanos un correo con tu solicitud. Te orientamos en el
+            alcance, tiempos y necesidades para cotizar de forma clara y eficiente.
+          </p>
         </div>
 
-        <div class="grid2">
+        <div class="grid2 grid2--contact">
+          <!-- Datos -->
           <article class="card">
             <h3>Datos</h3>
+
             <ul class="contactList">
-            <li class="contactItem">
+              <li class="contactItem">
                 <div class="contactIcon contactIcon--phone" aria-hidden="true">
-                <!-- Teléfono -->
-                <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none">
                     <path d="M7 4h3l1 5-2 1c1.2 2.4 3.1 4.3 5.5 5.5l1.1-2 5.4 1V17c0 1.1-.9 2-2 2h-.2C11.7 19 5 12.3 5 4.2V4c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                  </svg>
                 </div>
                 <div class="contactInfo">
-                <div class="contactLabel">Teléfono</div>
-                <div class="contactValue"><a href="tel:+573144934264">314 493 4264</a></div>
+                  <div class="contactLabel">Teléfono</div>
+                  <div class="contactValue"><a href="tel:+573144934264">314 493 4264</a></div>
                 </div>
-            </li>
+              </li>
 
-            <li class="contactItem">
+              <li class="contactItem">
                 <div class="contactIcon contactIcon--email" aria-hidden="true">
-                <!-- Correo -->
-                <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none">
                     <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/>
                     <path d="M6.5 7.5 12 12l5.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                  </svg>
                 </div>
                 <div class="contactInfo">
-                <div class="contactLabel">Correo</div>
-                <div class="contactValue"><a href="mailto:c.jmcsas@hotmail.com">c.jmcsas@hotmail.com</a></div>
+                  <div class="contactLabel">Correo</div>
+                  <div class="contactValue"><a href="mailto:c.jmcsas@hotmail.com">c.jmcsas@hotmail.com</a></div>
                 </div>
-            </li>
+              </li>
 
-            <li class="contactItem">
+              <li class="contactItem">
                 <div class="contactIcon contactIcon--location" aria-hidden="true">
-                <!-- Dirección -->
-                <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none">
                     <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
+                  </svg>
                 </div>
                 <div class="contactInfo">
-                <div class="contactLabel">Dirección</div>
-                <div class="contactValue">Diagonal 27 sur # 34 - 56</div>
+                  <div class="contactLabel">Dirección</div>
+                  <div class="contactValue">Diagonal 27 sur # 34 - 56</div>
                 </div>
-            </li>
+              </li>
 
-            <li class="contactItem">
+              <li class="contactItem">
                 <div class="contactIcon contactIcon--whatsapp" aria-hidden="true">
-                <!-- WhatsApp -->
-                <svg viewBox="0 0 24 24" fill="none">
+                  <svg viewBox="0 0 24 24" fill="none">
                     <path d="M20 11.6A8 8 0 0 1 8.3 19L4 20l1-4.1A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M9.2 9.6c.2-1 .6-1.1 1.2-1.1.2 0 .4 0 .6.1.2.1.4.5.4.8 0 .4-.2.8-.4 1 .5 1 1.4 1.9 2.4 2.4.2-.2.6-.4 1-.4.3 0 .7.2.8.4.1.2.1.4.1.6 0 .6-.1 1-.9 1.2-.8.2-2.6-.4-4.2-2-1.6-1.6-2.2-3.4-2-4.2Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                  </svg>
                 </div>
                 <div class="contactInfo">
-                <div class="contactLabel">WhatsApp</div>
-                <div class="contactValue">
+                  <div class="contactLabel">WhatsApp</div>
+                  <div class="contactValue">
                     <a href="https://wa.me/573144934264" target="_blank" rel="noreferrer">Abrir chat</a>
+                  </div>
                 </div>
-                </div>
-            </li>
+              </li>
             </ul>
 
             <div class="contactActions">
-            <a class="btn btn--primary" href="https://wa.me/573144934264" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a class="btn" href="tel:+573144934264">Llamar</a>
-            <a class="btn" href="mailto:c.jmcsas@hotmail.com">Correo</a>
+              <a class="btn btn--primary" href="https://wa.me/573144934264" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a class="btn" href="tel:+573144934264">Llamar</a>
+              <a class="btn" href="mailto:c.jmcsas@hotmail.com">Correo</a>
             </div>
           </article>
 
+          <!-- Formulario (FUNCIONAL en Netlify) -->
           <article class="card">
             <h3>Escríbenos</h3>
 
-            <!-- Netlify Forms -->
-            <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contacto" />
+            <!-- Netlify Forms: NO lo generes por JS; debe estar en HTML -->
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/gracias.html"
+            >
+              <!-- Obligatorio para Netlify -->
+              <input type="hidden" name="form-name" value="contact" />
+
+              <!-- Honeypot anti-spam -->
               <p class="hidden">
                 <label>Si eres bot, no llenes esto: <input name="bot-field" /></label>
               </p>
 
-              <label class="label">Nombre
-                <input class="input" name="nombre" required />
+              <label class="label">
+                Nombre
+                <input class="input" name="nombre" autocomplete="name" required />
               </label>
 
-              <label class="label">Correo
-                <input class="input" name="email" type="email" required />
+              <label class="label">
+                Correo
+                <input class="input" name="email" type="email" autocomplete="email" required />
               </label>
 
-              <label class="label">Mensaje
+              <label class="label">
+                Teléfono (opcional)
+                <input class="input" name="telefono" type="tel" autocomplete="tel" />
+              </label>
+
+              <label class="label">
+                Mensaje
                 <textarea class="input" name="mensaje" rows="5" required></textarea>
               </label>
 
-              <button class="btn btn--primary" type="submit">Enviar</button>
-              <p class="muted small"></p>
+              <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+
+              <p class="muted small" style="margin:10px 0 0">
+                Al enviar, tu mensaje quedará registrado y te contactaremos lo antes posible.
+              </p>
             </form>
           </article>
         </div>
@@ -360,7 +401,7 @@
   <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalle">
     <div class="modal__backdrop" data-close></div>
     <div class="modal__panel" role="document">
-      <button class="modal__close" data-close aria-label="Cerrar">✕</button>
+      <button class="modal__close" data-close aria-label="Cerrar" type="button">✕</button>
       <div id="modalContent"></div>
     </div>
   </div>

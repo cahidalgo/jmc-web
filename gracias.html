@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gracias — JMC S.A.S</title>
+  <meta name="description" content="Gracias por contactar a Construcciones y Transportes JMC S.A.S." />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="section">
+    <div class="container">
+      <div class="card" style="max-width: 720px; margin: 0 auto;">
+        <h1 style="margin:0 0 10px; letter-spacing:-.02em;">¡Gracias por escribirnos!</h1>
+        <p class="muted" style="margin:0 0 14px;">
+          Hemos recibido tu mensaje. En <strong>Construcciones y Transportes JMC S.A.S</strong> lo revisaremos y
+          te contactaremos lo antes posible.
+        </p>
+
+        <div class="grid2" style="grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+          <a class="btn btn--primary" href="/">Volver al inicio</a>
+          <a class="btn" href="#contacto" onclick="window.location.href='/'">Ir a contacto</a>
+        </div>
+
+        <hr style="border:0; height:1px; background: var(--border); margin:16px 0;" />
+
+        <p class="muted small" style="margin:0 0 10px;">¿Prefieres contacto directo?</p>
+        <div class="contactActions" style="margin:0;">
+          <a class="btn btn--primary" href="https://wa.me/573144934264" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a class="btn" href="tel:+573144934264">Llamar</a>
+          <a class="btn" href="mailto:c.jmcsas@hotmail.com">Correo</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="muted small">© <span id="year"></span> Construcciones y Transportes JMC S.A.S</span>
+      <a class="muted small" href="/">Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

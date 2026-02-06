@@ -7,7 +7,7 @@ const featuredProjects = [
     titulo: "Consorcio Protumaco",
     inicio: "2024-01-30",
     fin: null,
-    estado: "en-curso",
+    estado: "finalizado",
     descripcion: "Mejoramiento y mantenimiento de la vía de acceso (puentes El Morro, El Pindo y Aguaclara), del puerto de Tumaco (Nariño).",
     imagen: "assets/proyectos/protumaco.jpg"
   },
@@ -34,9 +34,9 @@ const featuredProjects = [
     titulo: "Mega Colegio Pablo VI",
     inicio: "2019-05-15",
     fin: null,
-    estado: "en-curso",
+    estado: "finalizado",
     descripcion: "Proyecto Mega Colegio Pablo VI (según portafolio).",
-    imagen: "assets/proyectos/mega-colegio-pablo-vi.jpg"
+    imagen: "assets/proyectos/mega-colegio-pablo-vi.png"
   },
   {
     id: "calima14",
@@ -45,7 +45,7 @@ const featuredProjects = [
     fin: "2010-10-24",
     estado: "finalizado",
     descripcion: "Construcción asociada al Centro Comercial Calima La 14.",
-    imagen: "assets/proyectos/calima-la-14.jpg"
+    imagen: "assets/proyectos/calima-la-14.png"
   },
   {
     id: "boyaca-suba",
@@ -54,7 +54,7 @@ const featuredProjects = [
     fin: "2005-07-01",
     estado: "finalizado",
     descripcion: "Proyecto puente Av. Boyacá – Suba (según portafolio).",
-    imagen: "assets/proyectos/puente-boyaca-suba.jpg"
+    imagen: "assets/proyectos/puente-boyaca-suba.png"
   }
 ];
 
@@ -84,14 +84,18 @@ const recordObras = [
 ];
 
 const gallery = [
-  { src: "assets/galeria/galeria-1.jpg", alt: "Galería 1" },
-  { src: "assets/galeria/galeria-2.jpg", alt: "Galería 2" },
-  { src: "assets/galeria/galeria-3.jpg", alt: "Galería 3" },
-  { src: "assets/galeria/galeria-4.jpg", alt: "Galería 4" },
-  { src: "assets/galeria/galeria-5.jpg", alt: "Galería 5" },
-  { src: "assets/galeria/galeria-6.jpg", alt: "Galería 6" },
-  { src: "assets/galeria/galeria-7.jpg", alt: "Galería 7" },
-  { src: "assets/galeria/galeria-8.jpg", alt: "Galería 8" },
+  { src: "assets/galeria/galeria-1.jpg", alt: "Imagen 1" },
+  { src: "assets/galeria/galeria-2.jpg", alt: "Imagen 2" },
+  { src: "assets/galeria/galeria-3.jpg", alt: "Imagen 3" },
+  { src: "assets/galeria/galeria-4.jpg", alt: "Imagen 4" },
+  { src: "assets/galeria/galeria-5.jpg", alt: "Imagen 5" },
+  { src: "assets/galeria/galeria-6.jpg", alt: "Imagen 6" },
+  { src: "assets/galeria/galeria-7.jpg", alt: "Imagen 7" },
+  { src: "assets/galeria/galeria-8.jpg", alt: "Imagen 8" },
+  { src: "assets/galeria/galeria-9.jpg", alt: "Imagen 9" },
+  { src: "assets/galeria/galeria-10.jpg", alt: "Imagen 10" },
+  { src: "assets/galeria/galeria-11.jpg", alt: "Imagen 11" },
+  { src: "assets/galeria/galeria-12.jpg", alt: "Imagen 12" },
 ];
 
 function formatDate(iso){
@@ -182,28 +186,261 @@ function renderProjects(){
 }
 
 /* Servicios */
-function renderServices(){
-  const wrap = $("#servicesAccordion");
-  wrap.innerHTML = services.map((s, idx) => `
-    <div class="accItem reveal" data-acc="${idx}">
-      <button class="accBtn" type="button" aria-expanded="false">
-        <span>${s.titulo}</span>
-        <span class="accChevron">▾</span>
-      </button>
-      <div class="accPanel">${s.detalle}</div>
-    </div>
-  `).join("");
+function serviceIcon(name){
+  // Íconos simples (reutilizados). Puedes cambiarlos por los tuyos si quieres.
+  const common = {
+    build: `
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 21h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M7 21V9l5-3 5 3v12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M10 21v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>`,
+    truck: `
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 7h11v10H3V7Z" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M14 10h4l3 3v4h-7v-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M7 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
+      </svg>`,
+    layers: `
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M3 12l9 5 9-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M3 16l9 5 9-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>`,
+    bridge: `
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M4 18V10c3 0 4-3 8-3s5 3 8 3v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M7 18v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M17 18v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>`
+  };
 
-  $$(".accItem", wrap).forEach(item => {
-    const btn = $(".accBtn", item);
-    btn.addEventListener("click", () => {
-      const open = item.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
+  // Asignación por palabras clave
+  const n = name.toLowerCase();
+  if(n.includes("material") || n.includes("cantera")) return common.truck;
+  if(n.includes("juntas") || n.includes("puente")) return common.bridge;
+  if(n.includes("ciment") || n.includes("super") || n.includes("estructura")) return common.layers;
+  return common.build;
+}
+
+// Versión mejorada del array (puedes dejar tu array actual, pero esto se ve mejor)
+const servicesPlus = services.map(s => {
+  const t = s.titulo.toLowerCase();
+  let sub = "Solución de obra con estándares de calidad.";
+  let badges = ["Calidad", "Seguridad", "Cumplimiento"];
+  let bullets = ["Planificación y ejecución según requerimientos del proyecto.", "Control de calidad y seguimiento.", "Entrega con soporte y trazabilidad."];
+
+  if(t.includes("excav")){ sub="Movimiento de tierras y retiro controlado."; badges=["Movimiento de tierras","Logística"]; }
+  if(t.includes("cantera")){ sub="Suministro y transporte de agregados."; badges=["Suministro","Transporte"]; }
+  if(t.includes("ciment")){ sub="Bases y cimentaciones para estructura."; badges=["Estructural","Normativa"]; }
+  if(t.includes("mamposter")){ sub="Acabados en mampostería y pañete."; badges=["Acabados","Calidad"]; }
+  if(t.includes("espacio")){ sub="Intervenciones urbanas y espacio público."; badges=["Urbano","Espacio público"]; }
+  if(t.includes("juntas")){ sub="Instalación y ajuste de juntas de puentes."; badges=["Puentes","Mantenimiento"]; }
+  if(t.includes("fibra")){ sub="Reforzamiento estructural especializado."; badges=["Reforzamiento","Especializado"]; }
+
+  return {
+    ...s,
+    sub,
+    badges,
+    bullets,
+    icon: serviceIcon(s.titulo)
+  };
+});
+
+function iconForService(title){
+  // íconos simples
+  const icons = {
+    truck: `<svg viewBox="0 0 24 24" fill="none">
+      <path d="M3 7h11v10H3V7Z" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M14 10h4l3 3v4h-7v-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M7 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
+    </svg>`,
+    layers: `<svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M3 12l9 5 9-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M3 16l9 5 9-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>`,
+    build: `<svg viewBox="0 0 24 24" fill="none">
+      <path d="M3 21h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M7 21V9l5-3 5 3v12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M10 21v-6h4v6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>`,
+    bridge: `<svg viewBox="0 0 24 24" fill="none">
+      <path d="M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M4 18V10c3 0 4-3 8-3s5 3 8 3v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M7 18v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M17 18v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>`,
+    pin: `<svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.8"/>
+    </svg>`
+  };
+
+  const t = title.toLowerCase();
+  if(t.includes("material") || t.includes("cantera")) return icons.truck;
+  if(t.includes("juntas") || t.includes("puente")) return icons.bridge;
+  if(t.includes("espacio")) return icons.pin;
+  if(t.includes("ciment") || t.includes("estructura") || t.includes("super")) return icons.layers;
+  return icons.build;
+}
+
+function serviceMeta(s){
+  const t = s.titulo.toLowerCase();
+
+  // categoría + colores por tarjeta (marca + coherencia)
+  if(t.includes("excav") || t.includes("material") || t.includes("cantera")){
+    return { cat:"tierra", sub:"Movimiento de tierras, retiro y suministro.", a:"#0ea5e9", b:"#F6C343", badges:["Movimiento de tierras","Logística"], bullets:[
+      "Retiro y disposición según requerimientos del proyecto.",
+      "Coordinación de transporte y tiempos de entrega.",
+      "Control y trazabilidad del material."
+    ]};
+  }
+
+  if(t.includes("ciment") || t.includes("estructura") || t.includes("super")){
+    return { cat:"estructura", sub:"Bases, estructura y componentes principales.", a:"#0B6BFF", b:"#2DA9FF", badges:["Estructural","Normativa"], bullets:[
+      "Ejecución alineada a especificaciones técnicas.",
+      "Control de calidad y seguimiento en obra.",
+      "Cumplimiento de seguridad y procedimientos."
+    ]};
+  }
+
+  if(t.includes("mamposter") || t.includes("pañete") || t.includes("pisos")){
+    return { cat:"acabados", sub:"Acabados con detalle y buena terminación.", a:"#F59E0B", b:"#F6C343", badges:["Acabados","Calidad"], bullets:[
+      "Terminaciones limpias y consistentes.",
+      "Revisión de detalles y ajustes finales.",
+      "Orden y control durante la ejecución."
+    ]};
+  }
+
+  if(t.includes("espacio")){
+    return { cat:"urbano", sub:"Intervenciones urbanas y espacio público.", a:"#22c55e", b:"#16a34a", badges:["Urbano","Espacio público"], bullets:[
+      "Intervención en andenes, parques y zonas comunes.",
+      "Trabajo organizado para minimizar afectaciones.",
+      "Cumplimiento de especificaciones del entorno."
+    ]};
+  }
+
+  // especializado
+  return { cat:"especializado", sub:"Soluciones técnicas especializadas.", a:"#a855f7", b:"#6366f1", badges:["Especializado","Técnico"], bullets:[
+    "Implementación según diseño y requerimientos.",
+    "Acompañamiento y control de ejecución.",
+    "Entrega con soporte y trazabilidad."
+  ]};
+}
+
+function renderServices(){
+  const cards = document.getElementById("servicesCards");
+  const panel = document.getElementById("servicePanel");
+  const search = document.getElementById("serviceSearch");
+
+  let activeCat = "todos";
+  let activeId = services[0]?.titulo ?? "";
+
+  const buildData = () => services.map(s => {
+    const meta = serviceMeta(s);
+    return {
+      ...s,
+      id: s.titulo,
+      icon: iconForService(s.titulo),
+      ...meta
+    };
+  });
+
+  const data = buildData();
+
+  const filteredData = () => {
+    const q = (search?.value || "").toLowerCase().trim();
+    return data.filter(x => {
+      const okCat = activeCat === "todos" ? true : x.cat === activeCat;
+      const okText = (x.titulo + " " + x.detalle).toLowerCase().includes(q);
+      return okCat && okText;
+    });
+  };
+
+  const renderPanel = (item) => {
+    panel.style.setProperty("--iconA", item.a);
+    panel.style.setProperty("--iconB", item.b);
+
+    panel.innerHTML = `
+      <div class="panelHead">
+        <div class="panelIcon" aria-hidden="true">
+          ${item.icon}
+        </div>
+        <div>
+          <h3 class="panelTitle">${item.titulo}</h3>
+          <p class="panelDesc">${item.detalle}</p>
+        </div>
+      </div>
+
+      <div class="panelBadges">
+        ${item.badges.map(b => `<span class="badge">${b}</span>`).join("")}
+      </div>
+
+      <ul class="panelBullets">
+        ${item.bullets.map(li => `<li>${li}</li>`).join("")}
+      </ul>
+
+      <div class="panelCta">
+        <a class="btn btn--primary" href="#contacto">Cotizar este servicio</a>
+        <a class="btn" href="https://wa.me/573144934264" target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+    `;
+  };
+
+  const renderCards = () => {
+    const list = filteredData();
+    if(list.length === 0){
+      cards.innerHTML = `<div class="card"><p class="muted" style="margin:0">No hay resultados para tu búsqueda.</p></div>`;
+      panel.innerHTML = `<p class="muted" style="margin:0">Selecciona un servicio para ver el detalle.</p>`;
+      return;
+    }
+
+    if(!list.some(x => x.id === activeId)) activeId = list[0].id;
+
+    cards.innerHTML = list.map(item => {
+      const active = item.id === activeId;
+      return `
+        <button class="sCard ${active ? "is-active" : ""}" type="button" data-sid="${item.id}"
+          style="--iconA:${item.a}; --iconB:${item.b}">
+          <div class="sIcon" aria-hidden="true">${item.icon}</div>
+          <div class="sText">
+            <p class="sTitle">${item.titulo}</p>
+            <p class="sSub">${item.sub}</p>
+          </div>
+        </button>
+      `;
+    }).join("");
+
+    const activeItem = list.find(x => x.id === activeId) || list[0];
+    renderPanel(activeItem);
+
+    document.querySelectorAll(".sCard").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeId = btn.dataset.sid;
+        renderCards();
+      });
+    });
+  };
+
+  // Chips category
+  document.querySelectorAll('[data-scat]').forEach(chip => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll('[data-scat]').forEach(x => x.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      activeCat = chip.dataset.scat;
+      renderCards();
     });
   });
 
-  setupReveal();
+  search?.addEventListener("input", renderCards);
+
+  renderCards();
 }
+
 
 /* Galería con navegación */
 let currentGalleryIndex = 0;

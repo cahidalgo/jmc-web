@@ -17,7 +17,7 @@ const featuredProjects = [
     inicio: "2021-12-17",
     fin: "2025-01-15",
     estado: "finalizado",
-    descripcion: "Proyecto Conexión 20 (según portafolio).",
+    descripcion: "Proyecto Conexión 20.",
     imagen: "assets/proyectos/conexion-20.jpg"
   },
   {
@@ -35,7 +35,7 @@ const featuredProjects = [
     inicio: "2019-05-15",
     fin: null,
     estado: "finalizado",
-    descripcion: "Proyecto Mega Colegio Pablo VI (según portafolio).",
+    descripcion: "Proyecto Mega Colegio Pablo VI.",
     imagen: "assets/proyectos/mega-colegio-pablo-vi.png"
   },
   {
@@ -53,7 +53,7 @@ const featuredProjects = [
     inicio: "2004-06-01",
     fin: "2005-07-01",
     estado: "finalizado",
-    descripcion: "Proyecto puente Av. Boyacá – Suba (según portafolio).",
+    descripcion: "Proyecto puente Av. Boyacá – Suba .",
     imagen: "assets/proyectos/puente-boyaca-suba.png"
   }
 ];
